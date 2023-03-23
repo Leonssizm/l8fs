@@ -4,7 +4,7 @@
     <article>
        <h1>{{ $post->title }}</h1>
 
-       <a href="categories/{{$post->category->id}}">{{$post->category->name}}</a>
+       By<a href="#">Tito in</a><a href="categories/{{$post->category->id}}">{{$post->category->name}}</a>
 
        <div>
         {!!$post->body!!}

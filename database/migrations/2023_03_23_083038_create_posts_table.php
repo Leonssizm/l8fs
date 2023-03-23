@@ -14,6 +14,7 @@ return new class extends Migration {
 			$table->id();
 			$table->string('title');
 			$table->foreignId('category_id');
+			$table->foreignId('user_id');
 			$table->text('excerpt');
 			$table->string('body');
 			$table->timestamps();
