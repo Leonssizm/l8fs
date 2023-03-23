@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
 			'user_id'     => $user->id,
 			'category_id' => $personal->id,
 			'title'       => 'MY FIRST POST',
+			'slug'        => 'my-first-post',
 			'excerpt'     => 'first post excerpt',
 			'body'        => 'asdasdadslkjaflkjqljelhjqefjbfds,ansbjsahdbjqhwdkjqwhaskjdnalksdnasd',
 		]);
@@ -46,6 +47,7 @@ class DatabaseSeeder extends Seeder
 			'user_id'     => $user->id,
 			'category_id' => $work->id,
 			'title'       => 'MY Second POST',
+			'slug'        => 'my-second-post',
 			'excerpt'     => 'second post excerpt',
 			'body'        => 'asdasdadslkjaflkjqljelhjqefjbfds,ansbjsahdbjqhwdkjqwhaskjdnalksdnasd',
 		]);
@@ -53,6 +55,7 @@ class DatabaseSeeder extends Seeder
 			'user_id'     => $user->id,
 			'category_id' => $home->id,
 			'title'       => 'MY second POST',
+			'slug'        => 'my-third-post',
 			'excerpt'     => 'second post excerpt',
 			'body'        => 'asdasdadslkjaflkjqljelhjqefjbfds,ansbjsahdbjqhwdkjqwhaskjdnalksdnasd',
 		]);
