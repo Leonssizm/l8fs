@@ -22,14 +22,15 @@ Route::get('/', function () {
 	]);
 });
 
-Route::get('posts/{post}', function (Post $post) {
+Route::get('posts/{post:id}', function (Post $post) {
 	return view('post', [
 		'post' => $post,
 	]);
 });
 
 Route::get('categories/{category}', function (Category $category) {
-	return view('posts', ['posts' => $category->posts]);
+	return view('posts', ['posts' => $category->posts,
+	]);
 });
 
 Route::get('authors/{user}', function (User $user) {
