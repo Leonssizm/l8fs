@@ -17,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+	$posts = Post::with('category');
+	if (request('search'))
+	{
+		$posts->where('title', 'like', '%' . request('search') . '%');
+	}
+
 	return view('posts', [
-		'posts'     => Post::with('category')->get(),
+		'posts'     => $posts->get(),
 		'categories'=> Category::all(),
 	]);
 });
