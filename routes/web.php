@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Category;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,25 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	$posts = Post::with('category');
-	if (request('search'))
-	{
-		$posts->where('title', 'like', '%' . request('search') . '%');
-	}
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-	return view('posts', [
-		'posts'     => $posts->get(),
-		'categories'=> Category::all(),
-	]);
-});
-
-Route::get('posts/{post:id}', function (Post $post) {
-	return view('post', [
-		'post'      => $post,
-		'categories'=> Category::all(),
-	]);
-});
+Route::get('posts/{post:id}', [Postcontroller::class, 'show']);
 
 Route::get('categories/{category}', function (Category $category) {
 	return view('posts', [
