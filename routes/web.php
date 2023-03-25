@@ -21,7 +21,7 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('posts/{post:id}', [Postcontroller::class, 'show']);
 
 Route::get('categories/{category}', function (Category $category) {
-	return view('posts', [
+	return view('posts.index', [
 		'posts'     => $category->posts,
 		'categories'=> Category::all(),
 	]);
