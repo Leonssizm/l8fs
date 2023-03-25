@@ -28,7 +28,7 @@ Route::get('categories/{category}', function (Category $category) {
 });
 
 Route::get('authors/{user}', function (User $user) {
-	return view('posts', [
+	return view('posts.index', [
 		'posts'                      => $user->posts,
 		'categories'                 => Category::all(),
 	]);

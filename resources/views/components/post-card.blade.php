@@ -34,7 +34,9 @@
                                 <div class="flex items-center text-sm">
                                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                                     <div class="ml-3">
-                                    <h5 class="font-bold">{{$post->user->name}}</h5>
+                                        <a href="/authors/{{$post->user->id}}">
+                                            <h5 class="font-bold">{{$post->user->name}}</h5>
+                                            </a>
                                     </div>
                                 </div>
 
