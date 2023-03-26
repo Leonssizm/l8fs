@@ -71,4 +71,4 @@ Route::post('newsletter', function () {
 
 // Admin Panel
 
-Route::get('admin/posts/create', [PostController::class, 'create']);
+Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');

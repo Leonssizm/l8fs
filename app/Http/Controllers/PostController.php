@@ -25,21 +25,6 @@ class PostController extends Controller
 
 	public function create()
 	{
-		// Protection from Random user typing the route
-		if (auth()->guest())
-		{
-			abort(403);
-		}
-
-		// protection from authenticated/registered user
-
-		if (auth()->user()->username !== 'levani')
-		{
-			abort(403);
-		}
-
-		// Or we can create Middlewear
-
 		return view('posts.create');
 	}
 }
