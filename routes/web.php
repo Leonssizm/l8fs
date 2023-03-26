@@ -68,3 +68,7 @@ Route::post('newsletter', function () {
 
 		return redirect('/')->with('success', 'you are now signed up for our newsletter');
 });
+
+// Admin Panel
+
+Route::get('admin/posts/create', [PostController::class, 'create']);
