@@ -48,3 +48,19 @@ Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 
 // Comments
 Route::post('posts/{post:id}/comments', [PostCommentsController::class, 'store']);
+
+Route::get('ping', function () {
+	$mailchimp = new \MailchimpMarketing\ApiClient();
+
+	$mailchimp->setConfig([
+		'apiKey' => config('services.mailchimp.key'),
+		'server' => 'us18',
+	]);
+
+	$response = $mailchimp->lists->addListMember('7fe5120b39', [
+		'email_address' => 'Lindsey.White93@hotmail.com',
+		'status'        => 'pending',
+	]);
+
+	ddd($response);
+});
